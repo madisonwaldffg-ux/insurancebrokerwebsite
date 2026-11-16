@@ -146,12 +146,17 @@
     .process h2, .process h3 { color: #fff; }
     .process .eyebrow { color: var(--lime); }
     .process .section-lead { color: #c4d3bb; }
-    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
-    .step-num { font-family: "Open Sans", sans-serif; font-size: 42px; color: var(--lime); line-height: 1; margin-bottom: 14px; }
-    .step h3 { font-size: 20px; margin-bottom: 8px; }
-    .step p { font-size: 15px; color: #c4d3bb; }
-    .three-m { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-    .three-m span { background: rgba(201,232,162,.15); color: var(--lime); font-size: 13px; padding: 4px 10px; border-radius: 999px; }
+    .book-grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: 56px; align-items: start; }
+    .book-grid .section-lead { margin-bottom: 32px; }
+    .steps-list { list-style: none; display: grid; gap: 22px; }
+    .steps-list li { display: grid; grid-template-columns: 52px 1fr; gap: 14px; align-items: start; }
+    .step-num { font-size: 30px; font-weight: 800; color: var(--lime); line-height: 1.1; }
+    .steps-list h3 { font-size: 18px; margin-bottom: 4px; color: #fff; }
+    .steps-list p { font-size: 15px; color: #c4d3bb; }
+    .steps-list strong { color: var(--lime); font-weight: 600; }
+    .process .booking-frame { border: 0; box-shadow: 12px 12px 0 var(--lime); }
+    .process .booking-fallback { color: #c4d3bb; }
+    .process .booking-fallback a { color: var(--lime); }
 
     /* FAQ */
     .faq { max-width: 800px; }
@@ -187,12 +192,12 @@
     @media (max-width: 900px) {
       .hero-grid, .two-col, .plans, .verify, .lifecycle, .why-grid { grid-template-columns: 1fr; gap: 36px; }
       .grid-3 { grid-template-columns: 1fr; }
-      .steps { grid-template-columns: 1fr 1fr; }
+      .book-grid { grid-template-columns: 1fr; gap: 40px; }
       .nav-links li:not(:last-child) { display: none; }
       .hero-photo { max-width: 380px; }
       section { padding: 64px 0; }
     }
-    @media (max-width: 560px) { .steps { grid-template-columns: 1fr; } .living { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) { .living { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -204,7 +209,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#coverage">Coverage</a></li>
         <li><a href="#why">Why Me</a></li>
-        <li><a href="#process">How It Works</a></li>
+        <li><a href="#book">How It Works</a></li>
         <li><a href="#book" class="btn btn-primary btn-sm">Book a Call</a></li>
       </ul>
     </div>
@@ -342,21 +347,29 @@
     </div>
   </section>
 
-  <!-- PROCESS -->
-  <section class="process" id="process">
-    <div class="container">
-      <div class="eyebrow">How It Works</div>
-      <h2 class="section-title">Simple, transparent, and no cost to talk.</h2>
-      <p class="section-lead">Most of my clients get through the whole process in a single phone call. No nurse visits or blood draws are needed for many of the plans I offer.</p>
-      <div class="steps">
-        <div class="step"><div class="step-num">01</div><h3>Tell me your why</h3><p>We talk about who you want to protect and what would happen if nothing were in place.</p></div>
-        <div class="step"><div class="step-num">02</div><h3>The 3 M's</h3><p>A quick review so I can match you with the right carrier and coverage amount.</p><div class="three-m"><span>Mortgage</span><span>Medical</span><span>Money</span></div></div>
-        <div class="step"><div class="step-num">03</div><h3>Compare options</h3><p>I show you a few options that fit your budget, from carriers likely to approve you. You pick.</p></div>
-        <div class="step"><div class="step-num">04</div><h3>Apply &amp; get approved</h3><p>I submit your application, and many carriers respond within 24 to 48 hours. I'll call you with the news.</p></div>
+  <!-- HOW IT WORKS + BOOKING -->
+  <section class="process" id="book">
+    <div class="container book-grid">
+      <div>
+        <div class="eyebrow">How It Works</div>
+        <h2 class="section-title">Simple, transparent, and no cost to talk.</h2>
+        <p class="section-lead">Most clients get through the whole process in a single phone call, and many plans need no nurse visit or blood draw. Pick a time that works for you.</p>
+        <ol class="steps-list">
+          <li><span class="step-num">01</span><div><h3>Tell me your why</h3><p>Who you want to protect and what would happen if nothing were in place.</p></div></li>
+          <li><span class="step-num">02</span><div><h3>The 3 M's</h3><p>A quick look at your <strong>mortgage, medical, and money</strong> so I can match you with the right carrier and coverage.</p></div></li>
+          <li><span class="step-num">03</span><div><h3>Compare options</h3><p>A few options that fit your budget, from carriers likely to approve you. You pick.</p></div></li>
+          <li><span class="step-num">04</span><div><h3>Apply &amp; get approved</h3><p>Many carriers respond within 24 to 48 hours, and I'll call you with the news.</p></div></li>
+        </ol>
+      </div>
+      <div>
+        <div class="booking-frame">
+          <iframe src="https://links.agentmadeagency.com/widget/bookings/mortgage-protection-options1-d125e574-0dc0-4551-8745-a66852e47038" scrolling="no" id="booking-calendar" title="Book a call with Madison Wald"></iframe>
+        </div>
+        <p class="booking-fallback">Calendar not loading? <a href="https://links.agentmadeagency.com/widget/bookings/mortgage-protection-options1-d125e574-0dc0-4551-8745-a66852e47038" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
       </div>
     </div>
   </section>
-
+  <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
 
   <!-- VERIFY LICENSE -->
   <section class="white" style="padding:64px 0">
@@ -373,20 +386,6 @@
       </div>
     </div>
   </section>
-
-  <!-- BOOKING -->
-  <section class="white" id="book">
-    <div class="container">
-      <div class="eyebrow">Book a Call</div>
-      <h2 class="section-title">Pick a time that works for you.</h2>
-      <p class="section-lead">Grab a spot on my calendar for a free, no-pressure review. We'll talk through your goals and I'll show you options that fit your budget.</p>
-      <div class="booking-frame">
-        <iframe src="https://links.agentmadeagency.com/widget/bookings/mortgage-protection-options1-d125e574-0dc0-4551-8745-a66852e47038" scrolling="no" id="booking-calendar" title="Book a call with Madison Wald"></iframe>
-      </div>
-      <p class="booking-fallback">Calendar not loading? <a href="https://links.agentmadeagency.com/widget/bookings/mortgage-protection-options1-d125e574-0dc0-4551-8745-a66852e47038" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
-    </div>
-  </section>
-  <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
 
   <!-- CONTACT -->
   <section id="contact">
